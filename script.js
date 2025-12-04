@@ -55,7 +55,7 @@ const questions = [
     }
 ];
 
-// 5 Rastgele Sonuç Kombinasyonu (YENİ VİDEO EKLENDİ)
+// 5 Rastgele Sonuç Kombinasyonu (Eski Beşar Esad sonucu kaldırıldı)
 const results = [
     { 
         title: "Siz %100 Vergimansiniz", 
@@ -64,6 +64,7 @@ const results = [
         audio: 'muzik1.mp3',
         korkuncFont: false
     },
+    // ESKİ SONUÇ KALDIRILDI: { title: "Siz %100 beşar esadsınız", ... }
     { 
         title: "Siz kesinlikle ben türk milliyetçisiyim arkadaş adamsınız", 
         type: 'video', 
@@ -85,7 +86,6 @@ const results = [
         audio: null,
         korkuncFont: false
     },
-    // YENİ EKLEME
     { 
         title: "Ya Sen birtanesin", 
         type: 'video', 
@@ -205,7 +205,6 @@ function showResult() {
     quizSection.classList.add('hidden');
     resultSection.classList.remove('hidden');
 
-    // Random seçim şimdi 6 sonuç arasından yapılıyor (results.length = 6)
     const randomIndex = Math.floor(Math.random() * results.length); 
     const selectedResult = results[randomIndex];
 
