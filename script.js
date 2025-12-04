@@ -75,7 +75,7 @@ const results = [
     { 
         title: "PocikerimSentarcıHazretleri", 
         type: 'video', 
-        media: 'video2.mp4', 
+        media: 'Video2.mp4', 
         audio: null,
         korkuncFont: true 
     },
@@ -245,3 +245,4 @@ window.onload = () => {
 
     loadQuestion();
 };
+
