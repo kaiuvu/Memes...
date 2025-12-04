@@ -1,0 +1,234 @@
+/* Gelişmiş Renk Paleti ve Tema Değişkenleri */
+:root {
+    --primary-color: #4a148c; /* Derin Mor */
+    --secondary-color: #ffeb3b; /* Vurgu Parlak Sarı */
+    --success-color: #00c853; 
+    --font-heading: 'Roboto', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+    --transition-time: 0.3s;
+    --footer-color: #e91e63; /* Footer için parlak kırmızımsı mor */
+}
+
+/* LIGHT THEME (Güncellenmiş: Daha Gri Tonlama) */
+.light-theme {
+    --text-color: #333;
+    --background-color: #e6e6e6; /* Yumuşak Gri Zemin */
+    --card-background: #fdfdfd; /* Konteyner Hafif Beyaz/Gri */
+    --option-bg: #eeeeee; /* Şık Arkaplanı Orta Gri */
+    --option-hover-bg: #dcdcdc;
+}
+
+/* DARK THEME */
+.dark-theme {
+    --text-color: #e0e0e0;
+    --background-color: #212121;
+    --card-background: #363636;
+    --option-bg: #424242;
+    --option-hover-bg: #5a5a5a;
+    --primary-color: #e91e63; /* Koyu temada pembe/kırmızı vurgu */
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    transition: background-color var(--transition-time), color var(--transition-time);
+}
+
+.container {
+    background-color: var(--card-background);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    width: 100%;
+    margin-top: 50px;
+    position: relative;
+    transition: background-color var(--transition-time), box-shadow var(--transition-time);
+}
+
+/* Mobil Uyumluluk */
+@media (max-width: 650px) {
+    body {
+        padding: 10px;
+        align-items: stretch;
+    }
+    .container {
+        padding: 20px 15px;
+        margin-top: 20px;
+    }
+    .options-list {
+        grid-template-columns: 1fr; /* Mobil: Tek sütun */
+    }
+}
+/* 2x2 Şık Düzeni */
+@media (min-width: 651px) {
+    .options-list {
+        grid-template-columns: 1fr 1fr; /* Geniş Ekran: 2 sütun */
+    }
+}
+
+
+/* Başlık */
+header h1 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 5px;
+    transition: color var(--transition-time);
+}
+
+header p {
+    text-align: center;
+    color: var(--text-color);
+    opacity: 0.8;
+    margin-bottom: 30px;
+}
+
+/* Sorular */
+#question-text {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    text-align: center;
+    transition: color var(--transition-time);
+}
+
+.options-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 12px;
+}
+
+.option-item {
+    background-color: var(--option-bg);
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all var(--transition-time);
+    border: 2px solid transparent;
+}
+
+.option-item:hover {
+    background-color: var(--option-hover-bg);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.option-item.selected {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--secondary-color);
+    font-weight: bold;
+    box-shadow: 0 0 10px var(--secondary-color);
+}
+
+/* Geri Bildirim Kutusu */
+.feedback-box {
+    margin-top: 20px;
+    padding: 10px;
+    text-align: center;
+    font-style: italic;
+    color: var(--success-color);
+    font-weight: bold;
+    display: none;
+}
+
+/* Butonlar */
+.btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color var(--transition-time), transform 0.2s;
+}
+
+.btn:hover {
+    background-color: color-mix(in srgb, var(--primary-color) 80%, black);
+    transform: translateY(-2px);
+}
+
+/* Dark Mode Toggle Butonu */
+.btn-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    font-size: 1.5em;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    transition: color var(--transition-time), background-color var(--transition-time);
+}
+.btn-icon:hover {
+    background-color: var(--option-hover-bg);
+}
+
+/* Sonuç Bölümü */
+#result-section {
+    text-align: center;
+}
+
+#result-title {
+    font-family: var(--font-heading);
+    font-size: 2.2em;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: color-mix(in srgb, var(--card-background) 80%, var(--primary-color));
+    transition: all var(--transition-time);
+}
+
+/* Özel Font: PocikerimSentarcıHazretleri için */
+.korkunc-font {
+    font-family: 'Times New Roman', serif;
+    font-size: 3em;
+    color: #ff0000;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6);
+}
+
+#result-content img, #result-content video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Footer (Alt Bilgi) Stili */
+.footer-text {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    font-size: 0.9em;
+    font-family: var(--font-heading); /* Font biraz farklı olsun */
+    color: var(--footer-color); /* Kırmızımsı Mor */
+    opacity: 0.9;
+    text-shadow: 0 0 3px rgba(var(--footer-color), 0.5); /* Hafif parlaklık */
+    transition: color var(--transition-time);
+}
+.dark-theme .footer-text {
+    color: var(--footer-color); /* Koyu temada da parlak kalsın */
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
