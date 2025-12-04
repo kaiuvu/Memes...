@@ -55,20 +55,13 @@ const questions = [
     }
 ];
 
-// 6 Rastgele Sonuç Kombinasyonu (YENİ VİDEO EKLENDİ)
+// 5 Rastgele Sonuç Kombinasyonu (YENİ VİDEO EKLENDİ)
 const results = [
     { 
         title: "Siz %100 Vergimansiniz", 
         type: 'image', 
         media: 'fotograf1.png', 
         audio: 'muzik1.mp3',
-        korkuncFont: false
-    },
-    { 
-        title: "Siz %100 beşar esadsınız", 
-        type: 'image', 
-        media: 'fotograf2.png', 
-        audio: 'muzik2.mp3',
         korkuncFont: false
     },
     { 
